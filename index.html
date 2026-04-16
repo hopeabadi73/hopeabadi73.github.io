@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAF Property Solutions Ltd | Solusi Manajemen Properti Terpadu</title>
+    
+    <link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/50/2c3e50/real-estate.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lexend:wght@500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --navy: #1a2a6c;
+            --blue-accent: #2c3e50;
+            --green-accent: #27ae60;
+            --light-gray: #f4f7f6;
+            --white: #ffffff;
+            --text-dark: #333333;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Lexend', sans-serif;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 25px;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            background: var(--white);
+            height: 90px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            color: var(--navy);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--green-accent);
+            margin-left: 5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li { margin-left: 30px; }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover { color: var(--green-accent); }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(26, 42, 108, 0.7), rgba(26, 42, 108, 0.5)), 
+                        url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            padding-top: 90px;
+        }
+
+        .hero-content { max-width: 700px; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1.2; }
+        .hero p { font-size: 1.2rem; margin-bottom: 35px; opacity: 0.9; }
+
+        .btn {
+            display: inline-block;
+            background: var(--green-accent);
+            color: var(--white);
+            padding: 16px 35px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 5px;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background: #219150;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(39, 174, 96, 0.3);
+        }
+
+        /* --- Services Section --- */
+        .services { padding: 100px 0; background: var(--light-gray); }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 2.5rem; color: var(--navy); }
+        .line { width: 50px; height: 4px; background: var(--green-accent); margin: 15px auto; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            transition: var(--transition);
+            border-bottom: 4px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-bottom: 4px solid var(--green-accent);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+        }
+
+        .card i { font-size: 2.5rem; color: var(--green-accent); margin-bottom: 25px; display: block; }
+        .card h3 { margin-bottom: 15px; color: var(--navy); }
+        .card p { color: #666; font-size: 0.95rem; }
+
+        /* --- About Section --- */
+        .about { padding: 100px 0; }
+        .about-flex {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+        .about-image { flex: 1; min-width: 300px; }
+        .about-image img { width: 100%; border-radius: 15px; }
+        .about-text { flex: 1; min-width: 300px; }
+        .about-text h2 { font-size: 2.5rem; margin-bottom: 25px; color: var(--navy); }
+        .about-text p { margin-bottom: 20px; color: #555; }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo h3 { margin-bottom: 20px; color: var(--green-accent); }
+        .footer-info h4 { margin-bottom: 25px; font-size: 1.1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
+        .footer-info p { color: #ccc; font-size: 0.9rem; margin-bottom: 15px; display: flex; align-items: flex-start; }
+        .footer-info i { margin-right: 15px; color: var(--green-accent); margin-top: 5px; }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-container">
+            <a href="#" class="logo">GAF<span>PROPERTY</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Layanan</a></li>
+                <li><a href="#about">Tentang Kami</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Property Solutions Tailored for You.</h1>
+                <p>Manajemen properti profesional, penyewaan, dan perawatan gedung di Liversedge dan seluruh West Yorkshire.</p>
+                <a href="#contact" class="btn">Dapatkan Konsultasi</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Layanan Spesialis Kami</h2>
+                <div class="line"></div>
+                <p>Membantu Anda mengelola aset dengan ketenangan pikiran.</p>
+            </div>
+            
+            <div class="grid">
+                <div class="card">
+                    <i class="fas fa-home"></i>
+                    <h3>Manajemen Sewa</h3>
+                    <p>Layanan komprehensif untuk pemilik properti, mulai dari mencari penyewa hingga pemeliharaan rutin.</p>
+                </div>
+                <div class="card">
+                    <h3>Pemeliharaan Fasilitas</h3>
+                    <p>Solusi perbaikan dan perawatan gedung yang cepat dan andal untuk menjaga nilai properti Anda.</p>
+                </div>
+                <div class="card">
+                    <h3>Strategi Investasi</h3>
+                    <p>Konsultasi untuk mengoptimalkan portofolio properti Anda agar menghasilkan ROI yang maksimal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-flex">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1582408921715-18e7806365c1?auto=format&fit=crop&w=800&q=80" alt="Property Management">
+                </div>
+                <div class="about-text">
+                    <h2>Membangun Kepercayaan Melalui Kualitas</h2>
+                    <p><strong>GAF Property Solutions Ltd</strong> lahir dari keinginan untuk menyederhanakan cara orang mengelola properti mereka. Kami menggabungkan keahlian lokal di Liversedge dengan standar manajemen global.</p>
+                    <p>Tim kami terdiri dari para profesional yang berdedikasi untuk memastikan setiap unit properti yang kami kelola berada dalam kondisi terbaik, aman, dan menguntungkan.</p>
+                    <a href="#contact" class="btn" style="background: var(--navy);">Selengkapnya</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo">
+                    <h3>GAF PROPERTY SOLUTIONS</h3>
+                    <p>Partner terpercaya dalam pengelolaan dan solusi real estat terpadu di United Kingdom.</p>
+                </div>
+                <div class="footer-info">
+                    <h4>Kantor Kami</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 32 Union Road, Liversedge, WF15 7HW, United Kingdom</p>
+                </div>
+                <div class="footer-info">
+                    <h4>Hubungi Kami</h4>
+                    <p><i class="fas fa-envelope"></i> admin@gafpropertysolutions.co.uk</p>
+                    <p><i class="fas fa-phone"></i> +44 (0) 1924 XXX XXX</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2026 GAF PROPERTY SOLUTIONS LTD. REGISTERED IN ENGLAND & WALES. COMPANY NO. 14XXXXXX.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
